@@ -4,17 +4,23 @@ module Lib
     ( getMovieData
     ) where
 
-import qualified Data.ByteString as B
-import qualified Data.ByteString.Char8 as BC
-import qualified Data.ByteString.Lazy as L
-import qualified Data.ByteString.Lazy.Char8 as LC
-import Network.HTTP.Simple
+import Network.HTTP.Client
+
 
 getMovieData = do 
-  request <- parseRequest $ "GET " ++ url 
-  response <- httpJSON request
-  return response
+  let settings = managerSetProxy
+              (proxyEnvironment Nothing)
+              defaultManagerSettings
+  man <- newManager settings
+  let req = "http://httpbin.org"
+              -- Note that the following settings will be completely ignored.
+              { proxy = Just $ Proxy "localhost" 1234
+              }
+--  request <- parseRequest $ "GET " ++ url 
+--  return httpJSON request
+  return $ httpLbs req man
   where key = "73c2e326"
         title = "The Matrix"
         responseType = "JSON"
         url = "http://www.omdbapi.com/?apikey=" ++ key ++ "&r=" ++ responseType ++ "&t=" ++ title
+--              { proxy = Just $ Proxy "localhost" 1234 }
