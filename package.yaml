@@ -27,6 +27,9 @@ dependencies:
 - blaze-html
 - mtl
 - wai
+- bytestring
+- http-client
+- http-conduit
 
 library:
   source-dirs: src

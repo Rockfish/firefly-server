@@ -37,6 +37,7 @@ packages:
 #
 extra-deps:
 - firefly-0.2.1.0@sha256:e9d73486464c3e223ec457e02b30ddd5b550fdbf6292b268c64581e2b07d888b,1519
+
 # - acme-missiles-0.3
 # - git: https://github.com/commercialhaskell/stack.git
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
@@ -66,3 +67,18 @@ extra-deps:
 #
 # Allow a newer minor version of GHC than the snapshot specifies
 # compiler-check: newer-minor
+compiler: ghc-8.10.7
+system-ghc: true
+
+local-bin-path: build
+
+nix:
+  enable: true
+  packages:
+    - libcxx
+    - icu
+    - gcc
+    - ncurses
+    - pcre
+    - zlib
+

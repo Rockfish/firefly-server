@@ -34,7 +34,10 @@ library
       aeson
     , base >=4.7 && <5
     , blaze-html
+    , bytestring
     , firefly
+    , http-client
+    , http-conduit
     , mtl
     , text
     , wai
@@ -51,8 +54,11 @@ executable firefly-server-exe
       aeson
     , base >=4.7 && <5
     , blaze-html
+    , bytestring
     , firefly
     , firefly-server
+    , http-client
+    , http-conduit
     , mtl
     , text
     , wai
@@ -70,8 +76,11 @@ test-suite firefly-server-test
       aeson
     , base >=4.7 && <5
     , blaze-html
+    , bytestring
     , firefly
     , firefly-server
+    , http-client
+    , http-conduit
     , mtl
     , text
     , wai
