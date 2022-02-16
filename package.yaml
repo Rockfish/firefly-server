@@ -30,6 +30,7 @@ dependencies:
 - bytestring
 - http-client
 - http-conduit
+- transformers
 
 library:
   source-dirs: src

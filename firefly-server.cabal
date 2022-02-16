@@ -40,6 +40,7 @@ library
     , http-conduit
     , mtl
     , text
+    , transformers
     , wai
   default-language: Haskell2010
 
@@ -61,6 +62,7 @@ executable firefly-server-exe
     , http-conduit
     , mtl
     , text
+    , transformers
     , wai
   default-language: Haskell2010
 
@@ -83,5 +85,6 @@ test-suite firefly-server-test
     , http-conduit
     , mtl
     , text
+    , transformers
     , wai
   default-language: Haskell2010
